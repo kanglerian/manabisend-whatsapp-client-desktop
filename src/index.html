@@ -296,7 +296,7 @@
   <script>
     const setIdentity = async () => {
       let identity = document.getElementById('identity').value;
-      await axios.get(`https://api.politekniklp3i-tasikmalaya.ac.id/pmb/users/${identity}`, {
+      await axios.get(`https://pmb-api.politekniklp3i-tasikmalaya.ac.id/users/${identity}`, {
         headers: {
           'lp3i-api-key': 'aEof9XqcH34k3g6IbJcQLxGY'
         }
@@ -372,6 +372,7 @@
               object[`type`] = inputImg.files[0].type;
               object[`namefile`] = inputImg.files[0].name;
             }
+            console.log(object);
             let data = JSON.stringify(object);
             $.ajax({
               type: "POST",
