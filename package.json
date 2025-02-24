@@ -1,16 +1,16 @@
 {
-  "name": "whatsapp-client-desktop",
-  "productName": "Whatsapp Sender",
-  "executableName": "Whatsapp Sender",
+  "name": "manabisend-client-desktop",
+  "productName": "ManabiSend for WhatsApp",
+  "executableName": "ManabiSend for WhatsApp",
   "options": {
-    "executableName": "Whatsapp Sender"
+    "executableName": "ManabiSend for WhatsApp"
   },
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "ManabiSend - Smart Bulk Messaging for WhatsApp",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
-    "tailwind": "npx tailwindcss -i ./src/input.css -o ./src/css/output.css --watch",
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./src/css/output.css",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
@@ -34,6 +34,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "@tailwindcss/cli": "^4.0.8",
+    "electron-squirrel-startup": "^1.0.0",
+    "tailwindcss": "^4.0.8"
   }
 }

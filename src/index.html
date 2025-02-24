@@ -3,19 +3,25 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Whatsapp Sender @kanglerian</title>
+  <title>Whatsapp - ManabiSend (Smart Bulk Messaging)</title>
   <link rel="stylesheet" href="./css/all.min.css">
   <link rel="stylesheet" href="./css/output.css" />
+  <style>
+    html,
+    body {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 
 <body class="grid grid-cols-1 md:grid-cols-2 h-screen">
-  <section class="flex bg-slate-50 h-full  overflow-y-auto md:overflow-hidden">
-    <div class="w-full flex flex-col justify-between p-8 bg-white h-full">
-      <nav class="flex flex-col md:flex-row items-center justify-between">
-        <a href="#" onclick="location.reload()" class="flex items-center gap-2">
-          <img src="./images/whatsapp.webp" alt="Whatsapp" class="w-10">
-          <span class="font-bold text-lg">Whatsapp Sender</span>
-        </a>
+  <section class="flex bg-slate-50 h-full overflow-y-auto md:overflow-hidden">
+    <div class="w-full flex flex-col justify-between p-8 bg-radial from-white to-gray-200 h-full">
+      <nav class="flex flex-col items-start justify-start gap-2">
+        <div class="flex items-center gap-2">
+          <img src="./images/whatsapp.webp" alt="Whatsapp" class="w-12">
+          <h2 class="font-bold text-lg">ManabiSend for Whatsapp</h2>
+        </div>
       </nav>
       <!-- Message -->
       <main id="message-container" class="hidden">
@@ -86,35 +92,35 @@
             </div>
             <div class="flex flex-wrap gap-2">
               <div id="add-fullname"
-                class="cursor-pointer text-center text-xs py-1 px-3 text-xs text-white rounded-lg bg-red-600 hover:bg-red-700">
+                class="cursor-pointer text-center text-xs py-1 px-3 text-xs text-white rounded-lg bg-red-600 hover:bg-red-700 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-circle-plus mr-1"></i><i class="fa-solid fa-address-card"></i> Nama
               </div>
               <div id="add-firstname"
-                class="cursor-pointer text-center text-xs py-1 px-3 text-xs text-white rounded-lg bg-red-600 hover:bg-red-700">
+                class="cursor-pointer text-center text-xs py-1 px-3 text-xs text-white rounded-lg bg-red-600 hover:bg-red-700 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-circle-plus mr-1"></i><i class="fa-solid fa-address-card"></i> Firstname
               </div>
               <div id="add-whatsapp"
-                class="cursor-pointer text-center text-xs py-1 px-3 text-xs text-white rounded-lg bg-red-600 hover:bg-red-700">
+                class="cursor-pointer text-center text-xs py-1 px-3 text-xs text-white rounded-lg bg-red-600 hover:bg-red-700 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-circle-plus mr-1"></i><i class="fa-brands fa-whatsapp"></i> Whatsapp
               </div>
               <div id="add-var1"
-                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600">
+                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-tag"></i> 1
               </div>
               <div id="add-var2"
-                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600">
+                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-tag"></i> 2
               </div>
               <div id="add-var3"
-                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600">
+                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-tag"></i> 3
               </div>
               <div id="add-var4"
-                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600">
+                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-tag"></i> 4
               </div>
               <div id="add-var5"
-                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600">
+                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-tag"></i> 5
               </div>
             </div>
@@ -143,17 +149,18 @@
               </div>
               <div class="flex items-center gap-2">
                 <button type="button" onclick="saveMessage()" id="btnSave"
-                  class="flex justify-center items-center text-white text-sm bg-sky-500 hover:bg-sky-600 h-9 w-9 rounded-full"><i
+                  class="flex justify-center items-center text-white text-sm bg-sky-500 hover:bg-sky-600 h-9 w-9 rounded-full cursor-pointer transition-all ease-in-out"><i
                     class="fa-solid fa-floppy-disk"></i></button>
                 <button type="button" onclick="getMessage()" id="restoreMessage"
-                  class="hidden justify-center items-center text-white text-sm bg-emerald-500 hover:bg-emerald-600 h-9 w-9 rounded-full"><i
+                  class="hidden justify-center items-center text-white text-sm bg-emerald-500 hover:bg-emerald-600 h-9 w-9 rounded-full cursor-pointer transition-all ease-in-out"><i
                     class="fa-solid fa-rotate-left"></i></button>
                 <button type="button" onclick="removeMessage()" id="removeMessage"
-                  class="hidden justify-center items-center text-white text-sm bg-red-500 hover:bg-red-600 h-9 w-9 rounded-full"><i
+                  class="hidden justify-center items-center text-white text-sm bg-red-500 hover:bg-red-600 h-9 w-9 rounded-full cursor-pointer transition-all ease-in-out"><i
                     class="fa-solid fa-trash"></i></button>
               </div>
             </div>
-            <button type="submit" class="bg-sky-500 hover:bg-sky-600 text-white py-2 px-5 rounded-xl text-xs"><i
+            <button type="submit"
+              class="bg-sky-500 hover:bg-sky-600 text-white py-2 px-5 rounded-xl text-xs cursor-pointer transition-all ease-in-out"><i
                 class="fa-solid fa-paper-plane mr-1"></i> Kirim</button>
           </div>
         </form>
@@ -162,36 +169,40 @@
       <!-- Authentication -->
       <main id="authentication-container" class="space-y-5">
         <div class="space-y-2">
-          <h2 class="font-bold text-4xl leading-snug">Simple. New Version.<br />Reliable Messaging for Marketing.</h2>
-          <p class="text-gray-700 text-sm">The Reliable Messaging for Marketing application is a dependable solution for
-            sending bulk text or media messages with high efficiency. With this tool, businesses can easily manage and
-            deliver messages to their customers, ensuring reliability in every delivery.</p>
+          <h2 class="font-bold text-5xl leading-snug">スペース そうしん.</h2>
+          <p class="text-gray-700 text-base"><span class="font-bold">ManabiSend</span> adalah solusi terbaik untuk
+            mengirim pesan masal secara cepat dan efisien. Dengan teknologi canggih, bisnis dapat dengan mudah mengelola
+            dan mengirim pesan teks, gambar, atau media ke pelanggan dalam sekali klik!</p>
+            <hr class="border-b border-gray-200">
+          <p class="text-sm text-gray-600 italic">Smart Bulk Messaging Tool, Effortless Bulk Messaging, Fast & Reliable
+            WhatsApp Sender, Automate Your WhatsApp Messages.</p>
         </div>
         <div class="w-full flex items-center gap-5" id="identity-container">
           <input type="number" id="identity" placeholder="Tulis kode ID anda disini..."
             class="w-full bg-slate-50 border border-slate-300 px-5 py-4 rounded-2xl text-xs">
           <button type="button" onclick="setIdentity()"
-            class="flex items-center gap-2 px-5 py-4 bg-[#25D366] hover:bg-[#24C861] text-white rounded-2xl text-xs">
+            class="flex items-center gap-2 px-5 py-4 bg-[#25D366] hover:bg-[#24C861] text-white rounded-2xl text-xs cursor-pointer transition-all ease-in-out">
             <i class="fa-solid fa-right-to-bracket"></i> Masuk</button>
         </div>
         <div id="loading-container" class="hidden">
           <lottie-player src="./animation/loading.json" background="transparent" speed="1"
             style="width: 100px; height: 100px;" loop autoplay></lottie-player>
         </div>
-        <div id="qrcode-container" class="space-y-3">
-          <img src="./img/qrcode-sample.png" alt="QR Code" id="qrcode" class="w-48 border border-gray-200">
+        <div id="qrcode-container" class="max-w-md space-y-3">
+          <img alt="QR Code" id="qrcode" class="w-48 border-4 border-[#25D366] rounded-xl drop-shadow">
           <div class="text-xs text-gray-700">Jika terjadi <span class="font-medium text-red-600">"Tidak dapat menautkan
-              perangkat"</span> maka <span class="text-emerald-600">tunggu sampai QR Code</span> berubah.</div>
+              perangkat"</span>,<br/>maka <span class="text-emerald-600">tunggu sampai QR Code</span> berubah, kemudian scan kembali.</div>
         </div>
       </main>
       <!-- End Authentication -->
       <footer class="flex items-center justify-between">
-        <a href="https://kanglerian.github.io" target="_blank"
-          class="text-xs text-gray-600 hover:text-gray-900">Copyright © 2024 Lerian Febriana</a>
+        <a href="./license.md" target="_blank" class="text-xs text-gray-600 hover:text-gray-700">
+          <p>&copy; <span id="year"></span> ManabiSend by <span class="font-medium">Lerian Febriana</span>. All Rights
+            Reserved.</p>
+        </a>
         <ul class="flex items-center gap-3">
           <li class="text-xs text-gray-600 hover:text-gray-900">
-            <a href="https://instagram.com/kanglerian.dev" target="_blank"><i class="fa-brands fa-instagram"></i>
-              Instagram</a>
+            <a href="http://saweria.co/kanglerian" target="_blank"><i class="fa-solid fa-coins"></i> Saweria</a>
           </li>
           <li class="text-xs text-gray-600 hover:text-gray-900">
             <a href="https://wa.me/6281286501015" target="_blank"><i class="fa-solid fa-circle-info"></i> Help</a>
@@ -200,59 +211,62 @@
       </footer>
     </div>
   </section>
-  <section id="chat-container" class="relative flex flex-col bg-[#25D366] h-full overflow-hidden">
-    <div class="h-2/6 flex flex-col gap-5 justify-center items-center" id="info-container">
+  <section id="chat-container"
+    class="relative flex flex-col bg-radial from-[#25D366] to-[#1CA653] h-full overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-5 z-0"
+      style="background-image: url('./images/doodle.png');"></div>
+    <div class="h-2/6 flex flex-col gap-5 justify-center items-center z-10" id="info-container">
       <div class="text-center space-y-3">
-        <i class="fa-brands fa-whatsapp fa-3x text-white"></i>
-        <div id="signal" class="text-white text-sm font-medium">Whatsapp Sender</div>
+        <i class="fa-brands fa-whatsapp fa-3x text-white drop-shadow"></i>
+        <div id="signal" class="text-white text-md font-bold drop-shadow">ManabiSend for Whatsapp</div>
       </div>
-      <div id="url-container" class="w-1/2 flex items-center gap-3">
+      <div id="url-container" class="w-1/2 flex gap-3">
         <div class="w-full relative">
-          <input type="password" id="url" class="w-full bg-white text-emerald-900 text-xs rounded-xl block px-4 py-2"
+          <input type="password" id="url"
+            class="w-full bg-white text-emerald-900 text-xs rounded-xl block px-4 py-2 border-4 border-red-700 drop-shadow"
             value="http://localhost:3000">
           <button type="button" onclick="changeType()"
-            class="absolute top-2 right-2 text-[11px] text-gray-400 hover:text-gray-500"><i
+            class="absolute top-3 right-3 text-[11px] text-gray-400 hover:text-gray-500 cursor-pointer transition-all ease-in-out drop-shadow"><i
               class="fa fa-solid fa-eye"></i></button>
         </div>
         <button type="button" onclick="setPath()"
-          class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl text-xs"><i
-            class="fa fa-solid fa-server"></i> Setup</button>
+          class="flex items-center gap-2 bg-sky-500 hover:bg-sky-600 border-3 border-sky-700 text-white drop-shadow px-4 py-2 rounded-xl text-xs cursor-pointer transition-all ease-in-out"><i
+            class="fa fa-solid fa-server"></i></button>
       </div>
-      <div id="sent-percent-container"
-        class="w-5/6 flex flex-col justify-center bg-white px-5 py-3 rounded-3xl border-4 border-emerald-500">
+      <div id="sent-percent-container" class="w-5/6 flex flex-col justify-center">
         <div id="sent-container" class="w-full flex justify-center"></div>
         <div class="w-full hidden" id="percent-container">
-          <div class="w-full bg-slate-200 rounded-full">
+          <div class="w-full bg-sky-200 drop-shadow border-2 border-white rounded-full">
             <div id="percent"
-              class="w-full bg-sky-500 text-xs font-medium text-sky-100 text-center p-0.5 leading-none rounded-full"
-              style="width: 50%"> 100%</div>
+              class="w-full bg-sky-500 text-xs font-medium text-sky-100 text-center p-0.5 leading-none rounded-full drop-shadow"
+              style="width: 50%"> 50%</div>
           </div>
         </div>
       </div>
     </div>
-    <main id="history-container" class="h-4/6 px-10 pb-10">
-      <section class="h-5/6 rounded-3xl bg-white border-4 border-emerald-500 overflow-hidden">
-        <nav class="flex justify-center items-center gap-2 py-3">
-          <button onclick="filterHistory('1')" role="button"
-            class="px-3 py-1.5 text-xs rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white">
-            <i class="fa-solid fa-circle-check"></i>
-          </button>
-          <button onclick="filterHistory('0')" role="button"
-            class="px-3 py-1.5 text-xs rounded-xl bg-red-600 hover:bg-red-700 text-white">
-            <i class="fa-solid fa-circle-xmark"></i>
-          </button>
-          <button role="button" onclick="stop()"
-            class="px-3 py-1.5 text-xs rounded-xl bg-red-600 hover:bg-red-700 text-white">
-            <i class="fa-solid fa-stop"></i>
-          </button>
-          <button role="button" onclick="deleteHistory()"
-            class="px-3 py-1.5 text-xs rounded-xl bg-red-600 hover:bg-red-700 text-white">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </nav>
+    <main id="history-container" class="h-4/6 px-10 pb-10 drop-shadow z-10">
+      <nav class="flex justify-center items-center gap-2 py-4 bg-gray-100 border-r-8 border-sky-400">
+        <button onclick="filterHistory('1')" role="button"
+          class="px-3 py-1.5 text-xs rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer">
+          <i class="fa-solid fa-circle-check"></i>
+        </button>
+        <button onclick="filterHistory('0')" role="button"
+          class="px-3 py-1.5 text-xs rounded-xl bg-red-600 hover:bg-red-700 text-white cursor-pointer transition-all ease-in-out">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </button>
+        <button role="button" onclick="stop()"
+          class="px-3 py-1.5 text-xs rounded-xl bg-red-600 hover:bg-red-700 text-white cursor-pointer transition-all ease-in-out">
+          <i class="fa-solid fa-stop"></i>
+        </button>
+        <button role="button" onclick="deleteHistory()"
+          class="px-3 py-1.5 text-xs rounded-xl bg-red-600 hover:bg-red-700 text-white cursor-pointer transition-all ease-in-out">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </nav>
+      <section class="h-5/6 bg-gray-100 border-l-8 border-sky-400">
         <div class="relative overflow-x-auto h-full">
-          <table class="w-full text-xs text-left rtl:text-right text-gray-500">
-            <thead class="text-xs text-gray-700 text-center uppercase bg-gray-50">
+          <table id="history-table-container" class="w-full text-xs text-left rtl:text-right text-gray-500">
+            <thead class="text-xs text-gray-700 text-center uppercase bg-gray-200 border-b-1 border-gray-300">
               <tr>
                 <th scope="col" class="px-6 py-3">
                   No.
@@ -268,19 +282,22 @@
                 </th>
               </tr>
             </thead>
-            <tbody id="history" class="text-xs text-center pb-5">
+            <tbody id="history" class="text-xs text-center pb-10">
               <tr class="bg-white border-b">
-                <td class="px-6 py-4 text-gray-600" colspan="4">Memuat data...</td>
+                <td class="px-6 py-4 text-gray-400 font-medium" colspan="4">Memuat data...</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
     </main>
+    <button type="button" onclick="location.reload()"
+      class="absolute top-3 right-15 px-3 py-2 rounded-xl bg-[#1CA653] hover:bg-[#178C44] border-2 border-[#106C33] text-white text-[12px] drop-shadow z-10 cursor-pointer cursor-pointer transition-all ease-in-out"><i
+        class="fa-solid fa-sync"></i></button>
     <button type="button" onclick="deletePath()"
-      class="absolute top-3 right-3 px-3 py-2 rounded-xl bg-red-600 hover:bg-red-700 border-2 border-white text-white text-[12px]"><i
+      class="absolute top-3 right-3 px-3 py-2 rounded-xl bg-red-600 hover:bg-red-700 border-2 border-red-800 text-white text-[12px] drop-shadow z-10 cursor-pointer cursor-pointer transition-all ease-in-out"><i
         class="fa-solid fa-power-off"></i></button>
-    <p id="logging" class="absolute bottom-1 left-2 text-[11px] text-emerald-100 z-2"></p>
+    <p id="logging" class="absolute bottom-1 left-2 text-[11px] text-[#30E673] z-2"></p>
   </section>
   <script src="./javascript/all.min.js"></script>
   <script src="./javascript/jquery-3.7.0.min.js"></script>
@@ -294,9 +311,12 @@
   <script src="./javascript/utilities/message.js"></script>
   <script src="./javascript/utilities/history.js"></script>
   <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
     const setIdentity = async () => {
-      let identity = document.getElementById('identity').value;
-      await axios.get(`https://pmb-api.politekniklp3i-tasikmalaya.ac.id/users/${identity}`, {
+      const identity = document.getElementById('identity').value;
+      const api = localStorage.getItem('api');
+      await axios.get(`${api}/users/${identity}`, {
         headers: {
           'lp3i-api-key': 'aEof9XqcH34k3g6IbJcQLxGY'
         }

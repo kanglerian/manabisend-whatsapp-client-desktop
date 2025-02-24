@@ -18,11 +18,17 @@ const socketSetup = () => {
     socket.on('connect', () => {
       let icon = '<i class="fa-solid fa-server mr-1"></i>'
       let text = '<span class="text-xs">Terhubung ke server.</span>'
-      $('#chat-container').css('background-color', '#25D366');
+      $('#chat-container').removeClass('from-[#ef4444] to-[#dc2626]')
+      .addClass('from-[#25D366] to-[#1CA653]');
       $('#signal').css('display', 'block').html(`<span>${icon} ${text}</span>`);
       $('#loading-container').show();
       getUser();
       console.log('Terhubung ke server');
+    });
+
+    socket.on('api', (data) => {
+      console.log(data);
+      localStorage.setItem('api', data);
     });
 
     socket.on('percent', (data) => {
@@ -36,7 +42,7 @@ const socketSetup = () => {
     socket.on('connect_error', () => {
       let icon = '<i class="fa-solid fa-server mr-1"></i>'
       let text = '<span class="text-xs">Gagal terhubung ke server.</span>'
-      $('#chat-container').css('background-color', '#ef4444');
+      $('#chat-container').removeClass('from-[#25D366] to-[#1CA653]').addClass('from-[#ef4444] to-[#dc2626]');
       $('#signal').css('display', 'block').html(`<span>${icon} ${text}</span>`);
       $('#qrcode-container').hide();
       $('#loading-container').show();
@@ -67,7 +73,15 @@ const socketSetup = () => {
       getHistory();
       $('#sent-percent-container').show();
       $('#sent-container').show();
-      $('#sent-container').html(info);
+      const statusColors = {
+        1: "text-red-500",
+        2: "text-amber-500",
+        3: "text-emerald-500",
+      };
+      const fontColor = statusColors[info.status] || "text-gray-500";
+      const infoContainer = `<p class="w-1/2 text-center rounded-xl ${fontColor} bg-white mb-3 px-5 py-2 drop-shadow text-xs font-medium"></i> ${info.message}</p>`;
+
+      $('#sent-container').html(infoContainer);
     });
 
     socket.on('stop', () => {
@@ -95,9 +109,13 @@ const socketSetup = () => {
         `
           });
         } else {
-          bucket += `<tr><td class="px-6 py-4 text-gray-600" colspan="4">Data Riwayat Belum Tersedia.</td></tr>`
+          bucket += `<tr><td class="px-6 py-4 text-gray-400 font-medium" colspan="4">Data Riwayat Belum Tersedia.</td></tr>`
         }
         $('#history').html(bucket);
+        const historyTable = document.getElementById('history-table-container');
+        if (historyTable) {
+          historyTable.parentElement.scrollTop = historyTable.parentElement.scrollHeight;
+        }
       });
     }
 
@@ -142,7 +160,7 @@ const socketSetup = () => {
     $('#history-container').hide();
     $('#sent-percent-container').hide();
     $('#info-container').removeClass('h-2/6').addClass('h-full');
-    $('#chat-container').css('background-color', '#ef4444');
+    $('#chat-container').removeClass('from-[#25D366] to-[#1CA653]').addClass('from-[#ef4444] to-[#dc2626]');
     $('#logging').text('');
   }
 }
