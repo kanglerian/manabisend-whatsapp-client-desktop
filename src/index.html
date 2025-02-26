@@ -15,56 +15,56 @@
 </head>
 
 <body class="grid grid-cols-1 md:grid-cols-2 h-screen">
-  <section class="flex bg-slate-50 h-full overflow-y-auto md:overflow-hidden">
-    <div class="w-full flex flex-col justify-between p-8 bg-radial from-white to-gray-200 h-full">
-      <nav class="flex flex-col items-start justify-start gap-2">
+  <section class="relative flex bg-slate-50 h-full overflow-y-auto md:overflow-hidden">
+    <div class="w-full flex flex-col justify-between pt-8 bg-radial from-white to-gray-200 h-full">
+      <nav class="flex flex-col items-start justify-start gap-2 px-8">
         <div class="flex items-center gap-2">
           <img src="./images/whatsapp.webp" alt="Whatsapp" class="w-12">
-          <h2 class="font-bold text-lg">ManabiSend for Whatsapp</h2>
+          <h2 class="font-bold text-base lg:text-lg">ManabiSend for Whatsapp</h2>
         </div>
       </nav>
       <!-- Message -->
-      <main id="message-container" class="hidden">
+      <main id="message-container" class="hidden px-8 pb-8">
         <form id="form" method="POST" enctype="multipart/form-data" class="space-y-3">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label for="contact" class="block mb-2 text-xs font-medium text-gray-900">Kontak</label>
               <input type="file" name="contactFile" id="contact" accept=".csv, .txt"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full px-4 py-3"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full px-4 py-2.5"
                 required>
-              <div class="bg-gray-50 border border-gray-300 text-gray-900 px-3 py-1 text-xs rounded-lg mt-1 space-y-1">
+              <div class="hidden xl:block bg-gray-50 border border-gray-300 text-gray-900 px-3 py-1 text-[11px] rounded-lg mt-1 space-y-1">
                 <div>
                   <span class="text-slate-800 font-bold">Contoh:</span>
                   <code class="text-slate-800">nama 1,081233123777,abc123,...</code>
                 </div>
               </div>
-              <p id="contact-helper" class="mt-2 text-xs text-red-600">Masukan file kontak dengan format .txt / .csv</p>
+              <p id="contact-helper" class="mt-1 ml-1 text-nowrap text-[11px] text-red-600">File kontak dengan format .txt / .csv</p>
             </div>
             <div>
               <label for="media" class="block mb-2 text-xs font-medium text-gray-900">Media</label>
               <input type="file" name="image" id="image"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full px-4 py-3">
-              <p id="media-helper" class="mt-2 text-xs text-red-600">Unggah berkas dengan contoh: .pdf</p>
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full px-4 py-2.5">
+              <p id="media-helper" class="mt-1 ml-1 text-nowrap text-[11px] text-red-600">Unggah berkas dengan contoh: .pdf</p>
             </div>
           </div>
           <div class="grid grid-cols-2 gap-5">
             <div>
               <label for="pmb" class="block mb-2 text-xs font-medium text-gray-900">PMB</label>
               <input type="number" placeholder="Tahun PMB" id="pmb"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full px-4 py-3"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full px-4 py-2.5"
                 placeholder="Tahun PMB" required>
-              <p id="pmb-helper" class="mt-2 text-xs text-red-600">Otomatis mengikuti PMB.</p>
+              <p id="pmb-helper" class="mt-1 ml-1 text-nowrap text-[11px] text-red-600">Otomatis mengikuti PMB.</p>
             </div>
             <div>
               <label for="titleMessage" class="block mb-2 text-xs font-medium text-gray-900">Judul Pesan</label>
               <input type="text" name="titleMessage" id="titleMessage" value="Perkenalan"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full px-4 py-3"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full px-4 py-2.5"
                 placeholder="Judul Pesan" required>
-              <p id="title-helper" class="mt-2 text-xs text-red-600">Penting! Ganti judul sekarang.</p>
+              <p id="title-helper" class="mt-1 ml-1 text-nowrap text-[11px] text-red-600">Penting! Ganti judul sekarang.</p>
             </div>
           </div>
           <div class="grid grid-cols-1 gap-3">
-            <div class="text-xl cursor-pointer" id="emoticon">
+            <div class="hidden xl:block text-xl cursor-pointer" id="emoticon">
               <span>✅</span>
               <span>🇲🇨</span>
               <span>👋</span>
@@ -92,35 +92,35 @@
             </div>
             <div class="flex flex-wrap gap-2">
               <div id="add-fullname"
-                class="cursor-pointer text-center text-xs py-1 px-3 text-xs text-white rounded-lg bg-red-600 hover:bg-red-700 cursor-pointer transition-all ease-in-out">
+                class="text-center py-1 px-3 text-nowrap text-[10px] lg:text-xs text-white rounded-lg bg-red-600 hover:bg-red-700 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-circle-plus mr-1"></i><i class="fa-solid fa-address-card"></i> Nama
               </div>
               <div id="add-firstname"
-                class="cursor-pointer text-center text-xs py-1 px-3 text-xs text-white rounded-lg bg-red-600 hover:bg-red-700 cursor-pointer transition-all ease-in-out">
+                class="text-center py-1 px-3 text-nowrap text-[10px] lg:text-xs text-white rounded-lg bg-red-600 hover:bg-red-700 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-circle-plus mr-1"></i><i class="fa-solid fa-address-card"></i> Firstname
               </div>
               <div id="add-whatsapp"
-                class="cursor-pointer text-center text-xs py-1 px-3 text-xs text-white rounded-lg bg-red-600 hover:bg-red-700 cursor-pointer transition-all ease-in-out">
+                class="text-center py-1 px-3 text-nowrap text-[10px] lg:text-xs text-white rounded-lg bg-red-600 hover:bg-red-700 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-circle-plus mr-1"></i><i class="fa-brands fa-whatsapp"></i> Whatsapp
               </div>
               <div id="add-var1"
-                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
+                class="py-1 px-3 text-nowrap text-[10px] lg:text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-tag"></i> 1
               </div>
               <div id="add-var2"
-                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
+                class="py-1 px-3 text-nowrap text-[10px] lg:text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-tag"></i> 2
               </div>
               <div id="add-var3"
-                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
+                class="py-1 px-3 text-nowrap text-[10px] lg:text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-tag"></i> 3
               </div>
               <div id="add-var4"
-                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
+                class="py-1 px-3 text-nowrap text-[10px] lg:text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-tag"></i> 4
               </div>
               <div id="add-var5"
-                class="cursor-pointer text-xs py-1 px-3 text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
+                class="py-1 px-3 text-nowrap text-[10px] lg:text-xs text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 cursor-pointer transition-all ease-in-out">
                 <i class="fa-solid fa-tag"></i> 5
               </div>
             </div>
@@ -128,7 +128,7 @@
               <div class="w-full">
                 <label for="message" class="block mb-2 text-xs font-medium text-gray-900">Pesan</label>
                 <textarea id="message" rows="4"
-                  class="block px-4 py-3 w-full text-xs text-gray-900 bg-gray-50 rounded-xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  class="block px-4 py-2.5 w-full text-xs text-gray-900 bg-gray-50 rounded-xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Tulis pesan disini..." required></textarea>
               </div>
               <div class="w-1/3 text-xs">
@@ -140,7 +140,7 @@
                   <code><s>~teks~</s></code></span><br>
               </div>
             </div>
-            <div class="flex items-center gap-3">
+            <div class="hidden lg:flex items-center gap-3">
               <div class="border border-gray-300 px-3 py-2 text-xs rounded-xl text-slate-700 bg-gray-50">
                 Gunakan <code class="text-blue-500">&var0</code>, <code class="text-blue-500">&var1</code>, <code
                   class="text-blue-500">...</code> untuk custom variabel<br>Contoh:
@@ -159,64 +159,71 @@
                     class="fa-solid fa-trash"></i></button>
               </div>
             </div>
-            <button type="submit"
-              class="bg-sky-500 hover:bg-sky-600 text-white py-2 px-5 rounded-xl text-xs cursor-pointer transition-all ease-in-out"><i
-                class="fa-solid fa-paper-plane mr-1"></i> Kirim</button>
+            <button type="submit" id="button-access"
+              class="w-full bg-sky-500 hover:bg-sky-600 text-white py-2 px-5 rounded-xl text-xs cursor-pointer transition-all ease-in-out"><i
+                class="fa-solid fa-paper-plane mr-1"></i><span>Kirim</span></button>
           </div>
         </form>
       </main>
       <!-- End Chat -->
       <!-- Authentication -->
-      <main id="authentication-container" class="space-y-5">
+      <main id="authentication-container" class="w-full relative space-y-5 px-8 pb-8">
         <div class="space-y-2">
-          <h2 class="font-bold text-5xl leading-snug">スペース そうしん.</h2>
-          <p class="text-gray-700 text-base"><span class="font-bold">ManabiSend</span> adalah solusi terbaik untuk
+          <h2 class="font-bold text-3xl lg:text-5xl leading-snug">スペース そうしん.</h2>
+          <p class="text-gray-700 text-sm lg:text-base"><span class="font-bold">ManabiSend</span> adalah solusi terbaik untuk
             mengirim pesan masal secara cepat dan efisien. Dengan teknologi canggih, bisnis dapat dengan mudah mengelola
             dan mengirim pesan teks, gambar, atau media ke pelanggan dalam sekali klik!</p>
-            <hr class="border-b border-gray-200">
-          <p class="text-sm text-gray-600 italic">Smart Bulk Messaging Tool, Effortless Bulk Messaging, Fast & Reliable
+          <hr class="border-b border-gray-200">
+          <p class="text-xs lg:text-sm text-gray-600 italic">Smart Bulk Messaging Tool, Effortless Bulk Messaging, Fast & Reliable
             WhatsApp Sender, Automate Your WhatsApp Messages.</p>
         </div>
         <div class="w-full flex items-center gap-5" id="identity-container">
           <input type="number" id="identity" placeholder="Tulis kode ID anda disini..."
-            class="w-full bg-slate-50 border border-slate-300 px-5 py-4 rounded-2xl text-xs">
+            class="w-full bg-slate-50 border border-slate-300 px-5 py-3 rounded-2xl text-xs">
           <button type="button" onclick="setIdentity()"
-            class="flex items-center gap-2 px-5 py-4 bg-[#25D366] hover:bg-[#24C861] text-white rounded-2xl text-xs cursor-pointer transition-all ease-in-out">
+            class="flex items-center gap-2 px-5 py-3 bg-[#25D366] hover:bg-[#24C861] text-white rounded-2xl text-xs cursor-pointer drop-shadow transition-all ease-in-out">
             <i class="fa-solid fa-right-to-bracket"></i> Masuk</button>
         </div>
         <div id="loading-container" class="hidden">
           <lottie-player src="./animation/loading.json" background="transparent" speed="1"
             style="width: 100px; height: 100px;" loop autoplay></lottie-player>
         </div>
-        <div id="qrcode-container" class="max-w-md space-y-3">
-          <img alt="QR Code" id="qrcode" class="w-48 border-4 border-[#25D366] rounded-xl drop-shadow">
+        <div id="qrcode-container" class="max-w-full lg:max-w-lg space-y-3">
+          <img alt="QR Code" id="qrcode" class="w-32 lg:w-48 border-4 border-[#25D366] rounded-xl drop-shadow">
           <div class="text-xs text-gray-700">Jika terjadi <span class="font-medium text-red-600">"Tidak dapat menautkan
-              perangkat"</span>,<br/>maka <span class="text-emerald-600">tunggu sampai QR Code</span> berubah, kemudian scan kembali.</div>
+              perangkat"</span> maka <span class="text-emerald-600">tunggu sampai QR Code</span> berubah, kemudian
+            scan kembali.</div>
         </div>
       </main>
       <!-- End Authentication -->
-      <footer class="flex items-center justify-between">
-        <a href="./license.md" target="_blank" class="text-xs text-gray-600 hover:text-gray-700">
-          <p>&copy; <span id="year"></span> ManabiSend by <span class="font-medium">Lerian Febriana</span>. All Rights
+      <footer class="w-full absolute bottom-8 flex flex-col lg:flex-row flex-nowrap lg:flex-wrap items-center justify-between gap-2 px-8 pb-4 border-b-2 border-gray-200">
+        <a href="./license.md" target="_blank" class="block text-nowrap text-[11px] lg:text-xs text-gray-600 hover:text-gray-700">
+          <p>&copy; <span id="year"></span> <span class="font-medium">Lerian Febriana</span>. All Rights
             Reserved.</p>
         </a>
         <ul class="flex items-center gap-3">
-          <li class="text-xs text-gray-600 hover:text-gray-900">
-            <a href="http://saweria.co/kanglerian" target="_blank"><i class="fa-solid fa-coins"></i> Saweria</a>
+          <li class="text-[11px] lg:text-xs text-gray-600 hover:text-gray-700 text-nowrap cursor-pointer transition-all ease-in-out">
+            <a href="http://saweria.co/kanglerian" target="_blank"><i class="fa-solid fa-mug-hot"></i> Buy Me a
+              Coffee</a>
           </li>
-          <li class="text-xs text-gray-600 hover:text-gray-900">
+          <li class="text-[11px] lg:text-xs text-gray-600 hover:text-gray-700 text-nowrap cursor-pointer transition-all ease-in-out">
             <a href="https://wa.me/6281286501015" target="_blank"><i class="fa-solid fa-circle-info"></i> Help</a>
           </li>
         </ul>
       </footer>
+      <section class="w-full relative bottom-0">
+        <marquee class="text-[10px] lg:text-xs text-red-500">⚠️ <span class="font-bold">[PERINGATAN]</span> Menggunakan layanan ini dapat berisiko terkena <span class="font-bold">pemblokiran</span>
+          atau <span class="font-bold">pembatasan akun</span>. Harap gunakan dengan bijak dan <span class="font-bold">pahami risikonya</span>. WhatsApp tidak mengizinkan bot atau
+          klien tidak resmi di platform mereka. </marquee>
+      </section>
     </div>
   </section>
   <section id="chat-container"
     class="relative flex flex-col bg-radial from-[#25D366] to-[#1CA653] h-full overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center opacity-5 z-0"
       style="background-image: url('./images/doodle.png');"></div>
-    <div class="h-2/6 flex flex-col gap-5 justify-center items-center z-10" id="info-container">
-      <div class="text-center space-y-3">
+    <div class="h-4/12 flex flex-col gap-5 justify-center items-center z-10" id="info-container">
+      <div class="text-center space-y-2">
         <i class="fa-brands fa-whatsapp fa-3x text-white drop-shadow"></i>
         <div id="signal" class="text-white text-md font-bold drop-shadow">ManabiSend for Whatsapp</div>
       </div>
@@ -244,8 +251,8 @@
         </div>
       </div>
     </div>
-    <main id="history-container" class="h-4/6 px-10 pb-10 drop-shadow z-10">
-      <nav class="flex justify-center items-center gap-2 py-4 bg-gray-100 border-r-8 border-sky-400">
+    <main id="history-container" class="h-8/12 px-10 pb-10 drop-shadow z-10">
+      <nav class="flex justify-center items-center gap-2 py-2.5 bg-gray-100 border-r-8 border-sky-400">
         <button onclick="filterHistory('1')" role="button"
           class="px-3 py-1.5 text-xs rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer">
           <i class="fa-solid fa-circle-check"></i>
@@ -263,10 +270,10 @@
           <i class="fa-solid fa-trash"></i>
         </button>
       </nav>
-      <section class="h-5/6 bg-gray-100 border-l-8 border-sky-400">
+      <section class="h-9/12 bg-gray-100 border-l-8 border-sky-400">
         <div class="relative overflow-x-auto h-full">
-          <table id="history-table-container" class="w-full text-xs text-left rtl:text-right text-gray-500">
-            <thead class="text-xs text-gray-700 text-center uppercase bg-gray-200 border-b-1 border-gray-300">
+          <table id="history-table-container" class="w-full text-nowrap text-[11px] lg:text-xs text-left rtl:text-right text-gray-500">
+            <thead class="text-nowrap text-[11px] lg:text-xs text-gray-700 text-center uppercase bg-gray-200 border-b-1 border-gray-300">
               <tr>
                 <th scope="col" class="px-6 py-3">
                   No.
@@ -282,9 +289,9 @@
                 </th>
               </tr>
             </thead>
-            <tbody id="history" class="text-xs text-center pb-10">
-              <tr class="bg-white border-b">
-                <td class="px-6 py-4 text-gray-400 font-medium" colspan="4">Memuat data...</td>
+            <tbody id="history" class="text-nowrap text-[11px] lg:text-xs text-center pb-10">
+              <tr>
+                <td class="px-6 py-4 text-gray-400 font-medium" colspan="4">Data Riwayat Belum Tersedia.</td>
               </tr>
             </tbody>
           </table>
@@ -292,10 +299,10 @@
       </section>
     </main>
     <button type="button" onclick="location.reload()"
-      class="absolute top-3 right-15 px-3 py-2 rounded-xl bg-[#1CA653] hover:bg-[#178C44] border-2 border-[#106C33] text-white text-[12px] drop-shadow z-10 cursor-pointer cursor-pointer transition-all ease-in-out"><i
+      class="absolute top-3 right-15 px-3 py-2 rounded-xl bg-[#1CA653] hover:bg-[#178C44] border-2 border-[#106C33] text-white text-[12px] drop-shadow z-10 cursor-pointer transition-all ease-in-out"><i
         class="fa-solid fa-sync"></i></button>
     <button type="button" onclick="deletePath()"
-      class="absolute top-3 right-3 px-3 py-2 rounded-xl bg-red-600 hover:bg-red-700 border-2 border-red-800 text-white text-[12px] drop-shadow z-10 cursor-pointer cursor-pointer transition-all ease-in-out"><i
+      class="absolute top-3 right-3 px-3 py-2 rounded-xl bg-red-600 hover:bg-red-700 border-2 border-red-800 text-white text-[12px] drop-shadow z-10 cursor-pointer transition-all ease-in-out"><i
         class="fa-solid fa-power-off"></i></button>
     <p id="logging" class="absolute bottom-1 left-2 text-[11px] text-[#30E673] z-2"></p>
   </section>
@@ -304,6 +311,7 @@
   <script src="./javascript/lottie-player.js"></script>
   <script src="./javascript/axios.min.js"></script>
   <script src="./javascript/socket.io.min.js"></script>
+  <script src="./javascript/server/access.js"></script>
   <script src="./javascript/server/socket.js"></script>
   <script src="./javascript/setting/server.js"></script>
   <script src="./javascript/setting/default.js"></script>
@@ -316,21 +324,36 @@
     const setIdentity = async () => {
       const identity = document.getElementById('identity').value;
       const api = localStorage.getItem('api');
-      await axios.get(`${api}/users/${identity}`, {
-        headers: {
-          'lp3i-api-key': 'aEof9XqcH34k3g6IbJcQLxGY'
-        }
-      })
+      await axios.get(`${api}/users/${identity}`)
         .then((response) => {
-          if (response.data.name !== "Tidak diketahui") {
+          if (response.status == 200) {
             socket.emit('setIdentity', identity);
             socketSetup();
-          } else {
-            alert('Akun Tidak Ditemukan.')
+            requestAccess(identity);
           }
         })
         .catch((error) => {
-          alert(error.response.data.message);
+          if (error.response) {
+            if (error.response.status === 404) {
+              alert("Akun tidak ditemukan!");
+            } else if (error.response.status === 403) {
+              alert("Akses ditolak! Anda tidak memiliki izin untuk mengakses.");
+            } else if (error.response.status === 401) {
+              alert("Autentikasi gagal! Silakan login kembali.");
+            } else if (error.response.status === 429) {
+              alert("Terlalu banyak permintaan! Coba lagi nanti.");
+            } else if (error.response.status >= 500) {
+              alert("Terjadi kesalahan pada server. Coba lagi nanti.");
+            } else {
+              alert(`Terjadi kesalahan: ${error.response.status}. Silakan coba lagi.`);
+            }
+          } else if (error.request) {
+            alert("Tidak ada respons dari server. Periksa koneksi internet Anda.");
+          } else if (error.message.includes("Network Error")) {
+            alert("Koneksi gagal! Periksa koneksi internet Anda dan coba lagi.");
+          } else {
+            alert(`Terjadi kesalahan yang tidak diketahui: ${error.message}`);
+          }
         });
     }
 

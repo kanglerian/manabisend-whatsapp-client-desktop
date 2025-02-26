@@ -8,6 +8,11 @@ const socketSetup = () => {
   if (server) {
     const accounts = localStorage.getItem('accounts');
     parsedData = JSON.parse(accounts);
+
+    if(parsedData){
+      requestAccess(parsedData.code);
+    }
+
     socket = io(server);
 
     $('#url-container').hide();
@@ -19,15 +24,13 @@ const socketSetup = () => {
       let icon = '<i class="fa-solid fa-server mr-1"></i>'
       let text = '<span class="text-xs">Terhubung ke server.</span>'
       $('#chat-container').removeClass('from-[#ef4444] to-[#dc2626]')
-      .addClass('from-[#25D366] to-[#1CA653]');
+        .addClass('from-[#25D366] to-[#1CA653]');
       $('#signal').css('display', 'block').html(`<span>${icon} ${text}</span>`);
       $('#loading-container').show();
       getUser();
-      console.log('Terhubung ke server');
     });
 
     socket.on('api', (data) => {
-      console.log(data);
       localStorage.setItem('api', data);
     });
 
@@ -52,7 +55,6 @@ const socketSetup = () => {
       $('#identity-container').hide();
       $('#info-container').removeClass('h-2/6').addClass('h-full');
       $('#logging').text('');
-      console.log('Gagal terhubung ke server');
     });
 
     socket.on('qrcodeval', (qrcode) => {
