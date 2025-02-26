@@ -3,7 +3,7 @@ const requestAccess = async (code) => {
     .then((response) => {
       if (response.status == 200) {
         $('#button-access').attr('type', 'submit');
-        $('#button-access').html(`<i class="fa-solid fa-paper-plane mr-1"></i><span>Kirim!</span>`);
+        $('#button-access').html(`<i class="fa-solid fa-paper-plane mr-1"></i><span>Send Messages</span>`);
       }
     })
     .catch((error) => {
